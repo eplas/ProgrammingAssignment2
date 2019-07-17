@@ -1,6 +1,6 @@
 ##  Pablo del Amor Saavedra 
 ##  makeCacheMatrix creates a special "matrix" object, which used with
-##  the function cacheSolve,  allows to cache its inversion and made available 
+##  the function cacheSolve,  allows to cache its inversion and make it available 
 ##  thru the getsolve method, without requiring to compute it again.  
 
 ##  This function creates a special "matrix" object that can cache its inverse
