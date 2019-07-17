@@ -1,11 +1,18 @@
 ##  Pablo del Amor Saavedra 
-##  makeCacheMatrix creates a special "matrix" object, which used with
-##  the function cacheSolve,  allows to cache its inversion and make it available 
-##  thru the getsolve method, without requiring to compute it again.  
+##  makeCacheMatrix and cacheSolve are used to create a special "matrix" object, 
+##  that allows its inversion to be cached, so after the first call, it doesn't need to
+##  be computed again.  
 
-##  This function creates a special "matrix" object that when used with the
-##  cacheSolve function can cache its inverse
-##  Only required argument is a matrix object
+####################################################################################################
+##  This function creates a special "matrix" object, with 4 methods available:
+##      -   set (initial matrix object)
+##      -   get (returns matrix object)
+##      -   setsolve (stores inverted matrix)
+##      -   getsolve (returns stored inverted matrix)
+##
+##  *** Only required argument is a matrix object ***
+####################################################################################################
+
 makeCacheMatrix <- function(x = matrix()) {
     s <- NULL
     set <- function(y) {
@@ -20,11 +27,15 @@ makeCacheMatrix <- function(x = matrix()) {
          getsolve = getsolve)
 }
 
-
+####################################################################################################
 ##  This function computes the inverse of the special "matrix" returned by makeCacheMatrix
 ##  if the computation is been done already, it gets the value stored in the object created
-##  by makeCacheMatrix, We assume that the matrix supplied is always invertible !!
-##  Only required argument is an invertible matrix created by the function makeCacheMatrix
+##  by makeCacheMatrix.
+##  !!!!!! We assume that the matrix supplied is always invertible !!!!!
+##
+##  *** Only required argument is an invertible matrix created by the function makeCacheMatrix ***
+####################################################################################################
+
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
     s <- x$getsolve()
