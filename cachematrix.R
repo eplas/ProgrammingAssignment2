@@ -3,7 +3,8 @@
 ##  the function cacheSolve,  allows to cache its inversion and make it available 
 ##  thru the getsolve method, without requiring to compute it again.  
 
-##  This function creates a special "matrix" object that can cache its inverse
+##  This function creates a special "matrix" object that when used with the
+##  cacheSolve function can cache its inverse
 ##  Only required argument is a matrix object
 makeCacheMatrix <- function(x = matrix()) {
     s <- NULL
