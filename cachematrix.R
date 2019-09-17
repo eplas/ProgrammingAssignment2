@@ -1,4 +1,4 @@
-##  Pablo del Amor Saavedra 
+##  Pablo
 ##  makeCacheMatrix and cacheSolve are used to create a special "matrix" object, 
 ##  that allows its inversion to be cached, so after the first call, it doesn't need to
 ##  be computed again.  
